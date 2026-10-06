@@ -351,7 +351,7 @@ body.custom-background { background-color: #ffffff; }
         </div>
 
         <!-- Botão de Chamada para Ação -->
-        <a href="https://www.tilimcheckout.com/checkout?p=a20dbbb39be0da7a260106dfc4d97c4a" class="cta-button">
+        <a href="#oferta" class="cta-button">
             SIM! QUERO COMEÇAR COM OS MAPAS AGORA
         </a>
 
@@ -1392,7 +1392,7 @@ body.custom-background { background-color: #ffffff; }
 <body data-rsssl=1>
 
 <div class="standalone-btn-wrapper">
-    <a href="https://www.tilimcheckout.com/checkout?p=a20dbbb39be0da7a260106dfc4d97c4a" class="btn-buy-standalone">
+    <a href="#oferta" class="btn-buy-standalone">
         sim, quero começar com meus mapas mentais agora!
     </a>
 </div>
@@ -1796,7 +1796,8 @@ body.custom-background { background-color: #ffffff; }
         /* Lista de Entregáveis */
         .deliverables-list {
             list-style: none;
-            margin-bottom: 40px;
+            margin-bottom: 28px;
+            padding-left: 6px;
         }
 
         .deliverables-list li {
@@ -1811,7 +1812,58 @@ body.custom-background { background-color: #ffffff; }
         .deliverables-list li strong {
             color: var(--primary-green);
             font-weight: 700;
-            margin-right: 5px;
+        }
+
+        /* Bloco de bônus dentro do card */
+        .bonus-list {
+            background: #DDF1F3;
+            border: 1px dashed rgba(22, 125, 134, 0.45);
+            border-radius: 16px;
+            padding: 22px 24px 8px;
+            margin-bottom: 10px;
+        }
+
+        .bonus-list-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--highlight-green);
+            margin-bottom: 14px;
+        }
+
+        .bonus-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .bonus-item svg {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            margin-right: 14px;
+            padding: 6px;
+            border-radius: 10px;
+            background: #FFFFFF;
+            color: #F59E0B;
+        }
+
+        .bonus-item strong {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            line-height: 1.3;
+        }
+
+        .bonus-item span {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            margin-top: 3px;
+            line-height: 1.45;
         }
 
         /* Ícone de Check */
@@ -1956,6 +2008,24 @@ body.custom-background { background-color: #ffffff; }
                 margin-top: 2px;
             }
 
+            .bonus-list {
+                padding: 18px 16px 4px;
+            }
+
+            .bonus-item svg {
+                width: 28px;
+                height: 28px;
+                margin-right: 12px;
+            }
+
+            .bonus-item strong {
+                font-size: 1rem;
+            }
+
+            .bonus-item span {
+                font-size: 0.9rem;
+            }
+
             .divider {
                 margin: 20px 0;
             }
@@ -1994,26 +2064,53 @@ body.custom-background { background-color: #ffffff; }
             </div>
 
             <!-- Card Central de Oferta -->
-            <div class="offer-card">
+            <div class="offer-card" id="oferta">
                 
                 <ul class="deliverables-list">
                     <li>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span><strong>200 Mapas Visuais</strong> de Enfermagem (6 Módulos)</span>
+                        <span><strong>200 Mapas Visuais</strong> de Enfermagem em 6 Módulos</span>
                     </li>
                     <li>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span><strong>Bônus Especial:</strong> Cronograma de Estudos em 60 Dias</span>
+                        <span>Material em PDF <strong>pronto para imprimir e usar</strong></span>
                     </li>
                     <li>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span><strong>Presente Extra:</strong> Painel de Mnemônicos em PDF</span>
+                        <span><strong>Acesso Imediato</strong> por e-mail após o pagamento</span>
                     </li>
                     <li>
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span>Material Digital <strong>Pronto para Imprimir e Usar</strong></span>
+                        <span><strong>Acesso Vitalício</strong>: revise quando e quantas vezes quiser</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span><strong>Suporte pelo WhatsApp</strong> para qualquer dúvida de acesso</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span><strong>Garantia de 7 Dias</strong>: reembolso sem burocracia</span>
                     </li>
                 </ul>
+
+                <!-- Bônus inclusos -->
+                <div class="bonus-list">
+                    <p class="bonus-list-title">Bônus inclusos hoje</p>
+                    <div class="bonus-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                        <div>
+                            <strong>(BÔNUS) Cronograma de Estudos em 60 Dias</strong>
+                            <span>Planilha prática que mostra o que revisar a cada dia, para avançar no edital com foco.</span>
+                        </div>
+                    </div>
+                    <div class="bonus-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                        <div>
+                            <strong>(BÔNUS) Painel de Mnemônicos em PDF</strong>
+                            <span>Pôster com siglas e frases curtas para lembrar notificação compulsória e calendário vacinal.</span>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="divider"></div>
 
@@ -2680,7 +2777,7 @@ body.custom-background { background-color: #ffffff; }
             <!-- Rodapé FAQ / CTA -->
             <div class="faq-footer">
                 <p>Agora que você tirou suas dúvidas, pode garantir seu material com tranquilidade.</p>
-                <a href="https://www.tilimcheckout.com/checkout?p=a20dbbb39be0da7a260106dfc4d97c4a" class="cta-button">
+                <a href="#oferta" class="cta-button">
                     QUERO ACESSAR MEU MATERIAL AGORA
                 </a>
             </div>
@@ -2835,6 +2932,62 @@ var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/13xdigital.com.br\/wp-adm
 /*! This file is auto-generated */
 var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
 //# sourceURL=https://13xdigital.com.br/wp-includes/js/wp-emoji-loader.min.js
+</script>
+
+<!-- Botões "#oferta": rolagem suave até o cartão da oferta + destaque ao chegar -->
+<style>
+    #oferta { scroll-margin-top: 24px; }
+    #oferta.oferta-destaque { animation: oferta-pulso 1.4s ease-out; }
+    @keyframes oferta-pulso {
+        0%   { box-shadow: 0 0 0 0 rgba(22, 125, 134, 0.55); transform: scale(1); }
+        30%  { transform: scale(1.02); }
+        100% { box-shadow: 0 0 0 22px rgba(22, 125, 134, 0); transform: scale(1); }
+    }
+</style>
+<script>
+(function () {
+    function suavizar(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+
+    function destacar(alvo) {
+        alvo.classList.remove('oferta-destaque');
+        void alvo.offsetWidth; // reinicia a animação se clicar de novo
+        alvo.classList.add('oferta-destaque');
+    }
+
+    function rolarAte(alvo) {
+        var rect = alvo.getBoundingClientRect();
+        // Centraliza o cartão na tela (ou alinha ao topo se ele for maior que a tela)
+        var destino = window.pageYOffset + rect.top - Math.max(24, (window.innerHeight - rect.height) / 2);
+        var inicio = window.pageYOffset;
+        var distancia = destino - inicio;
+
+        if (Math.abs(distancia) < 2) {
+            window.scrollTo(0, destino);
+            destacar(alvo);
+            return;
+        }
+
+        var duracao = Math.min(1400, Math.max(600, Math.abs(distancia) * 0.35));
+        var t0 = null;
+        function passo(agora) {
+            if (t0 === null) t0 = agora;
+            var p = Math.min(1, (agora - t0) / duracao);
+            window.scrollTo(0, inicio + distancia * suavizar(p));
+            if (p < 1) requestAnimationFrame(passo);
+            else destacar(alvo);
+        }
+        requestAnimationFrame(passo);
+    }
+
+    document.addEventListener('click', function (e) {
+        var link = e.target.closest && e.target.closest('a[href="#oferta"]');
+        if (!link) return;
+        var alvo = document.getElementById('oferta');
+        if (!alvo) return;
+        e.preventDefault();
+        rolarAte(alvo);
+    });
+})();
 </script>
 	</body>
 </html>
