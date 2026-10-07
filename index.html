@@ -1740,7 +1740,7 @@ body.custom-background { background-color: #ffffff; }
         }
 
         .offer-container {
-            max-width: 800px;
+            max-width: 1040px;
             width: 100%;
             display: flex;
             flex-direction: column;
@@ -1750,6 +1750,7 @@ body.custom-background { background-color: #ffffff; }
         /* Cabeçalho da Oferta */
         .offer-header {
             text-align: center;
+            max-width: 800px;
             margin-bottom: 40px;
         }
 
@@ -1979,6 +1980,189 @@ body.custom-background { background-color: #ffffff; }
         }
 
         /* =========================================
+           PLANOS: BÁSICO x COMPLETO
+           ========================================= */
+        /* Um embaixo do outro: Básico primeiro, aviso, depois o Completo */
+        .plans {
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            scroll-margin-top: 24px;
+        }
+
+        .plan-aviso {
+            text-align: center;
+            margin: 22px 0 30px;
+        }
+
+        .plan-aviso p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            line-height: 1.35;
+            color: #D97706;
+            max-width: 460px;
+            margin: 0 auto 6px;
+        }
+
+        .plan-aviso-setas {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #F59E0B;
+        }
+
+        .plan-aviso-setas svg {
+            width: 34px;
+            height: 34px;
+            margin-top: -16px;
+            animation: aviso-seta 1.5s infinite;
+        }
+
+        .plan-aviso-setas svg:first-child { margin-top: 0; }
+        .plan-aviso-setas svg:nth-child(2) { animation-delay: 0.2s; }
+        .plan-aviso-setas svg:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes aviso-seta {
+            0%, 100% { opacity: 0.25; transform: translateY(0); }
+            50%      { opacity: 1;    transform: translateY(5px); }
+        }
+
+        .plan-card {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
+            overflow: visible;
+        }
+
+        /* O conteúdo de baixo (preço + botão) fica sempre alinhado no rodapé */
+        .plan-bottom {
+            margin-top: auto;
+            text-align: center;
+        }
+
+        .plan-name {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            margin-bottom: 4px;
+        }
+
+        .plan-desc {
+            font-size: 1rem;
+            color: var(--text-gray);
+            margin-bottom: 24px;
+        }
+
+        /* Básico: visual mais discreto */
+        .plan-basic {
+            border: 1px solid rgba(22, 125, 134, 0.25);
+            box-shadow: 0 10px 25px -12px rgba(15, 76, 92, 0.12);
+        }
+
+        .plan-basic::before {
+            display: none;
+        }
+
+        .plan-basic .amount {
+            font-size: 4.2rem;
+        }
+
+        .plan-basic .currency {
+            font-size: 1.6rem;
+            margin-top: 8px;
+        }
+
+        .deliverables-list li.off {
+            color: #53666B;
+            opacity: 0.6;
+        }
+
+        .deliverables-list li.off svg {
+            color: #53666B;
+            background: rgba(83, 102, 107, 0.1);
+        }
+
+        /* Completo: plano em destaque */
+        .plan-complete {
+            border-width: 3px;
+            box-shadow: 0 30px 60px -15px rgba(15, 76, 92, 0.3);
+        }
+
+        .plan-complete::before {
+            border-radius: 20px 20px 0 0;
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #F59E0B;
+            color: #17252A;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 7px 18px;
+            border-radius: 50px;
+            white-space: nowrap;
+            box-shadow: 0 6px 14px rgba(245, 158, 11, 0.35);
+        }
+
+        .plan-complete .plan-name {
+            margin-top: 6px;
+        }
+
+        .amount small {
+            font-size: 0.45em;
+            letter-spacing: 0;
+        }
+
+        /* Botões dos planos */
+        .plan-button {
+            display: block;
+            width: 100%;
+            margin-top: 22px;
+            padding: 20px 16px;
+            border-radius: 50px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .plan-button-complete {
+            background: #F59E0B;
+            color: #17252A;
+            box-shadow: 0 15px 30px rgba(245, 158, 11, 0.3);
+        }
+
+        .plan-button-complete:hover {
+            background: #D97706;
+            transform: scale(1.03);
+            box-shadow: 0 20px 40px rgba(245, 158, 11, 0.4);
+        }
+
+        .plan-button-basic {
+            background: #FFFFFF;
+            color: var(--primary-green);
+            border: 2px solid var(--highlight-green);
+        }
+
+        .plan-button-basic:hover {
+            background: #DDF1F3;
+        }
+
+        /* =========================================
            OTIMIZAÇÃO PARA MOBILE
            ========================================= */
         @media (max-width: 768px) {
@@ -2039,6 +2223,23 @@ body.custom-background { background-color: #ffffff; }
                 font-size: 4rem;
             }
 
+            .plan-aviso p {
+                font-size: 1rem;
+            }
+
+            .plan-basic .amount {
+                font-size: 3.4rem;
+            }
+
+            .plan-name {
+                font-size: 1.3rem;
+            }
+
+            .plan-button {
+                font-size: 1rem;
+                padding: 18px 12px;
+            }
+
             .cta-button {
                 padding: 20px;
                 font-size: 1.1rem;
@@ -2063,74 +2264,121 @@ body.custom-background { background-color: #ffffff; }
                 <p>Garanta todo o material por menos do que custa um lanche na padaria.</p>
             </div>
 
-            <!-- Card Central de Oferta -->
-            <div class="offer-card" id="oferta">
-                
-                <ul class="deliverables-list">
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span><strong>200 Mapas Visuais</strong> de Enfermagem em 6 Módulos</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span>Material em PDF <strong>pronto para imprimir e usar</strong></span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span><strong>Acesso Imediato</strong> por e-mail após o pagamento</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span><strong>Acesso Vitalício</strong>: revise quando e quantas vezes quiser</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span><strong>Suporte pelo WhatsApp</strong> para qualquer dúvida de acesso</span>
-                    </li>
-                    <li>
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        <span><strong>Garantia de 7 Dias</strong>: reembolso sem burocracia</span>
-                    </li>
-                </ul>
+            <!-- Planos: Básico (R$ 10) e Completo (R$ 24,90) -->
+            <div class="plans" id="oferta">
 
-                <!-- Bônus inclusos -->
-                <div class="bonus-list">
-                    <p class="bonus-list-title">Bônus inclusos hoje</p>
-                    <div class="bonus-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
-                        <div>
-                            <strong>(BÔNUS) Cronograma de Estudos em 60 Dias</strong>
-                            <span>Planilha prática que mostra o que revisar a cada dia, para avançar no edital com foco.</span>
+                <!-- Plano Básico -->
+                <div class="offer-card plan-card plan-basic">
+                    <p class="plan-name">Plano Básico</p>
+                    <p class="plan-desc">Pagamento único. Acesso vitalício.</p>
+
+                    <ul class="deliverables-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>200 Mapas Visuais</strong> de Enfermagem</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Garantia de 7 Dias</strong></span>
+                        </li>
+                    </ul>
+
+                    <div class="plan-bottom">
+                        <div class="divider"></div>
+                        <div class="price-area">
+                            <div class="price-anchor">Pagamento único de:</div>
+                            <div class="price-final">
+                                <span class="currency">R$</span>
+                                <span class="amount">10</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="bonus-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
-                        <div>
-                            <strong>(BÔNUS) Painel de Mnemônicos em PDF</strong>
-                            <span>Pôster com siglas e frases curtas para lembrar notificação compulsória e calendário vacinal.</span>
-                        </div>
+                        <!-- Abre o popup de upgrade (não aponta direto para o checkout de propósito) -->
+                        <a href="#plano-basico" class="plan-button plan-button-basic" data-abrir-upsell>
+                            QUERO O PLANO BÁSICO
+                        </a>
                     </div>
                 </div>
 
-                <div class="divider"></div>
-
-                <!-- Ancoragem e Preço Final -->
-                <div class="price-area">
-                    <div class="price-anchor">
-                        De: <del>R$ 97,00</del> — Hoje você paga apenas:
+                <!-- Aviso entre os planos -->
+                <div class="plan-aviso">
+                    <p>Atenção: temos uma opção ainda mais completa para você! Confira abaixo</p>
+                    <div class="plan-aviso-setas" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
-                    <div class="price-final">
-                        <span class="currency">R$</span>
-                        <span class="amount">10</span>
+                </div>
+
+                <!-- Plano Completo -->
+                <div class="offer-card plan-card plan-complete">
+                    <span class="plan-badge">Mais escolhido</span>
+                    <p class="plan-name">Plano Completo</p>
+                    <p class="plan-desc">Os mapas + bônus, acesso vitalício e suporte.</p>
+
+                    <ul class="deliverables-list">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>200 Mapas Visuais</strong> de Enfermagem em 6 Módulos</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Material em PDF <strong>pronto para imprimir e usar</strong></span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Acesso Imediato</strong> por e-mail após o pagamento</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Acesso Vitalício</strong>: revise quando e quantas vezes quiser</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Suporte pelo WhatsApp</strong> para qualquer dúvida de acesso</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Garantia de 7 Dias</strong>: reembolso sem burocracia</span>
+                        </li>
+                    </ul>
+
+                    <!-- Bônus inclusos -->
+                    <div class="bonus-list">
+                        <p class="bonus-list-title">Bônus inclusos</p>
+                        <div class="bonus-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                            <div>
+                                <strong>(BÔNUS) Cronograma de Estudos em 60 Dias</strong>
+                                <span>Planilha prática que mostra o que revisar a cada dia, para avançar no edital com foco.</span>
+                            </div>
+                        </div>
+                        <div class="bonus-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+                            <div>
+                                <strong>(BÔNUS) Painel de Mnemônicos em PDF</strong>
+                                <span>Pôster com siglas e frases curtas para lembrar notificação compulsória e calendário vacinal.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="plan-bottom">
+                        <div class="divider"></div>
+                        <div class="price-area">
+                            <div class="price-anchor">
+                                De: <del>R$ 97,00</del> — Hoje você paga apenas:
+                            </div>
+                            <div class="price-final">
+                                <span class="currency">R$</span>
+                                <span class="amount">24<small>,90</small></span>
+                            </div>
+                        </div>
+                        <a href="https://www.tilimcheckout.com/checkout?p=a20dbbb39be0da7a260106dfc4d97c4a" class="plan-button plan-button-complete">
+                            QUERO O PLANO COMPLETO
+                        </a>
                     </div>
                 </div>
 
             </div>
-
-            <!-- Botão de Compra -->
-            <a href="https://www.tilimcheckout.com/checkout?p=a20dbbb39be0da7a260106dfc4d97c4a" class="cta-button">
-                QUERO RECEBER MEU MATERIAL AGORA
-            </a>
 
             <!-- Frases de Segurança -->
             <div class="security-badges">
@@ -2937,7 +3185,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 <!-- Botões "#oferta": rolagem suave até o cartão da oferta + destaque ao chegar -->
 <style>
     #oferta { scroll-margin-top: 24px; }
-    #oferta.oferta-destaque { animation: oferta-pulso 1.4s ease-out; }
+    .oferta-destaque { animation: oferta-pulso 1.4s ease-out; }
     @keyframes oferta-pulso {
         0%   { box-shadow: 0 0 0 0 rgba(22, 125, 134, 0.55); transform: scale(1); }
         30%  { transform: scale(1.02); }
@@ -2949,6 +3197,8 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     function suavizar(t) { return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
 
     function destacar(alvo) {
+        // Destaca o primeiro cartão visível, o Plano Básico (ou o bloco inteiro, se ele não existir)
+        alvo = alvo.querySelector('.plan-basic') || alvo;
         alvo.classList.remove('oferta-destaque');
         void alvo.offsetWidth; // reinicia a animação se clicar de novo
         alvo.classList.add('oferta-destaque');
@@ -2986,6 +3236,291 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
         if (!alvo) return;
         e.preventDefault();
         rolarAte(alvo);
+    });
+})();
+</script>
+
+<!-- Popup de upgrade: aparece ao clicar no Plano Básico -->
+<div class="upsell-overlay" id="upsell" role="dialog" aria-modal="true" aria-labelledby="upsell-titulo" hidden>
+    <div class="upsell-box" tabindex="-1">
+        <button type="button" class="upsell-fechar" aria-label="Fechar" data-fechar-upsell>&times;</button>
+
+        <p class="upsell-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg>
+            Presente desbloqueado
+        </p>
+        <h3 class="upsell-titulo" id="upsell-titulo">Espere! Você ganhou um desconto exclusivo no Plano Completo.</h3>
+
+        <img class="upsell-img" src="assets/13xdigital.com.br/wp-content/uploads/2026/05/mapas-mentais-enfermagem-mockup.webp" alt="Mapas Mentais de Enfermagem - Plano Completo">
+
+        <div class="upsell-preco">
+            <span>O Plano Completo custa <del>R$ 24,90</del></span>
+            <span>por apenas <strong>R$ 19,90</strong></span>
+        </div>
+
+        <div class="upsell-lista">
+            <p>Veja o que você leva a mais:</p>
+            <ul>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>Bônus:</strong> Cronograma de Estudos em 60 Dias</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>Bônus:</strong> Painel de Mnemônicos em PDF</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>Acesso Vitalício</strong> ao material</span></li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>Suporte</strong> pelo WhatsApp</span></li>
+            </ul>
+        </div>
+
+        <!-- Links: promoção do Completo e checkout do Básico (R$ 10) -->
+        <!-- Os dois links são de checkout: a Utmify marca InitiateCheckout no clique -->
+        <a href="https://www.tilimcheckout.com/checkout?p=680a16b56f9d9d5be4476570af474618" class="upsell-sim">SIM! QUERO O PLANO COMPLETO</a>
+        <a href="https://www.tilimcheckout.com/checkout?p=eb76f73564f359e4ffaddf4e4600228e" class="upsell-nao">Não, quero só o de R$ 10</a>
+    </div>
+</div>
+
+<style>
+    .upsell-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 99999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        background: rgba(23, 37, 42, 0.72);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+    }
+
+    .upsell-overlay[hidden] { display: none; }
+    .upsell-overlay.aberto { opacity: 1; }
+
+    .upsell-box {
+        position: relative;
+        width: 100%;
+        max-width: 420px;
+        max-height: calc(100vh - 32px);
+        overflow-y: auto;
+        background: #FFFFFF;
+        border: 3px solid #167D86;
+        border-radius: 24px;
+        padding: 28px 24px 22px;
+        text-align: center;
+        font-family: 'Inter', sans-serif;
+        color: #17252A;
+        box-shadow: 0 30px 70px rgba(15, 76, 92, 0.45);
+        transform: translateY(24px) scale(0.96);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .upsell-overlay.aberto .upsell-box { transform: none; }
+
+    /* .upsell-overlay na frente para vencer o estilo de <button> do tema */
+    .upsell-overlay .upsell-fechar {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        min-height: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 50%;
+        background: #DDF1F3 !important; /* o tema força fundo preto em <button> */
+        color: #0F4C5C !important;
+        font-family: Arial, sans-serif;
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: none;
+        box-shadow: none;
+        cursor: pointer;
+    }
+
+    .upsell-overlay .upsell-fechar:hover,
+    .upsell-overlay .upsell-fechar:focus { background: #167D86 !important; color: #FFFFFF !important; outline: none; }
+
+    .upsell-box:focus { outline: none; }
+
+    .upsell-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #167D86;
+        margin: 0 0 10px;
+    }
+
+    .upsell-tag svg { width: 18px; height: 18px; color: #F59E0B; }
+
+    .upsell-titulo {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.35rem;
+        font-weight: 800;
+        line-height: 1.25;
+        color: #0F4C5C;
+        margin: 0 0 16px;
+    }
+
+    .upsell-img {
+        display: block;
+        width: 100%;
+        max-width: 220px;
+        height: auto;
+        margin: 0 auto 16px;
+        border-radius: 14px;
+        border: 2px solid #167D86;
+    }
+
+    .upsell-preco {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        background: #F7FAFA;
+        border: 1px solid rgba(22, 125, 134, 0.25);
+        border-radius: 14px;
+        padding: 12px;
+        margin-bottom: 14px;
+        font-size: 0.95rem;
+        color: #53666B;
+    }
+
+    .upsell-preco del { color: #53666B; }
+
+    .upsell-preco strong {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.9rem;
+        font-weight: 800;
+        color: #D97706;
+    }
+
+    .upsell-lista {
+        background: #DDF1F3;
+        border: 1px dashed rgba(22, 125, 134, 0.45);
+        border-radius: 14px;
+        padding: 14px 16px 6px;
+        margin-bottom: 18px;
+        text-align: left;
+    }
+
+    .upsell-lista p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #167D86;
+        margin: 0 0 10px;
+    }
+
+    .upsell-lista ul { list-style: none; margin: 0; padding: 0; }
+
+    .upsell-lista li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+
+    .upsell-lista li svg {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        padding: 3px;
+        border-radius: 50%;
+        background: #FFFFFF;
+        color: #167D86;
+    }
+
+    .upsell-lista strong { color: #0F4C5C; }
+
+    .upsell-sim {
+        display: block;
+        background: #F59E0B;
+        color: #17252A;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.05rem;
+        font-weight: 800;
+        text-decoration: none;
+        padding: 18px 12px;
+        border-radius: 50px;
+        box-shadow: 0 12px 25px rgba(245, 158, 11, 0.35);
+        transition: all 0.25s ease;
+    }
+
+    .upsell-sim:hover { background: #D97706; transform: scale(1.03); }
+
+    .upsell-nao {
+        display: inline-block;
+        margin-top: 14px;
+        font-size: 0.9rem;
+        color: #53666B;
+        text-decoration: underline;
+    }
+
+    .upsell-nao:hover { color: #0F4C5C; }
+
+    body.upsell-travado { overflow: hidden; }
+
+    /* Celular ou tela baixa (notebook): versão compacta para caber sem rolar */
+    @media (max-width: 480px), (max-height: 820px) {
+        .upsell-box { padding: 20px 16px 14px; border-radius: 20px; }
+        .upsell-tag { font-size: 0.7rem; margin-bottom: 6px; padding-right: 30px; }
+        .upsell-titulo { font-size: 1.05rem; margin-bottom: 12px; }
+        .upsell-img { max-width: 130px; margin-bottom: 12px; border-radius: 10px; }
+        .upsell-preco { padding: 8px; margin-bottom: 10px; font-size: 0.88rem; }
+        .upsell-preco strong { font-size: 1.5rem; }
+        .upsell-lista { padding: 10px 12px 2px; margin-bottom: 14px; }
+        .upsell-lista p { font-size: 0.7rem; margin-bottom: 8px; }
+        .upsell-lista li { font-size: 0.86rem; margin-bottom: 7px; }
+        .upsell-sim { font-size: 0.92rem; padding: 15px 10px; }
+        .upsell-nao { margin-top: 10px; font-size: 0.85rem; }
+    }
+
+    /* Telas muito baixas: esconde a imagem para o preço e o botão caberem */
+    @media (max-height: 680px) {
+        .upsell-img { display: none; }
+    }
+</style>
+<script>
+(function () {
+    var popup = document.getElementById('upsell');
+    if (!popup) return;
+    var ultimoFoco = null;
+
+    function abrir() {
+        ultimoFoco = document.activeElement;
+        popup.hidden = false;
+        document.body.classList.add('upsell-travado');
+        requestAnimationFrame(function () { popup.classList.add('aberto'); });
+        popup.querySelector('.upsell-box').focus();
+    }
+
+    function fechar() {
+        popup.classList.remove('aberto');
+        document.body.classList.remove('upsell-travado');
+        setTimeout(function () { popup.hidden = true; }, 250);
+        if (ultimoFoco) ultimoFoco.focus();
+    }
+
+    document.addEventListener('click', function (e) {
+        if (e.target.closest && e.target.closest('[data-abrir-upsell]')) {
+            e.preventDefault();
+            abrir();
+        } else if (e.target.closest && e.target.closest('[data-fechar-upsell]')) {
+            fechar();
+        } else if (e.target === popup) {
+            fechar(); // clique fora da caixa
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !popup.hidden) fechar();
     });
 })();
 </script>
